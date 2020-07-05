@@ -1,0 +1,45 @@
+doctype html
+html(lang="ja")
+  head
+    meta(charset="utf-8")
+    link(rel="stylesheet",href="ress.css")
+    link(rel="stylesheet",href="top.css")
+    
+    title Pugテストだぜ
+  body
+  div.bg_container
+    div#main
+      div.circle_wrap
+        div.circle_icon
+          div.jackInTheBox.zoomOutUp
+            div.anime_circle_x
+            div.anime_circle_y
+      div.another
+        h1
+          span IE Deal Demo
+        ul.bg_wrap
+          - for (var i = 1; i <= 280; i++)
+            li(class="bg_item i" + i)
+              - for (var h = 1; h <= 4; h++)
+                hr(class="line line" + h)
+        ul.particle
+          - for (var i = 1; i <= 13; i++)
+            li
+              img(src="particle.png",alt="particle")
+      div.lines_wrap
+        ul.lines_list
+          li
+            img(src="bg03.jpg",alt="img")
+          li
+            img(src="bg03_line01.png",alt="img")
+          li
+            img(src="bg03_line02.png",alt="img")
+        ul.cube_list
+         - for (var i = 1; i <= 3; i++)
+            li
+              img(src="cube.png",alt="cube")
+      ul.btn
+        li.skip#skip SKIP
+        li.replay#replay REPLAY
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+  script(src="top.js")
