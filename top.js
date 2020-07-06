@@ -4,6 +4,11 @@ $(function(){
     var bg_width;
     var bg_height;
     var string_pxz;
+    bg_width = $bg_wrap.innerWidth().toString();
+                 bg_height = $bg_wrap.innerHeight().toString();
+                 string_pxz = bg_width + "px " + bg_height  + "px";
+                $bg_wrap.children("li").css({"background-size":string_pxz});
+                $bg_wrap.find("hr.line").css({"background-size":string_pxz});
     on_Add($main);
     $(window).on("resize",function(){
         bg_width = $bg_wrap.innerWidth().toString();
@@ -54,13 +59,9 @@ $(function(){
         $.each(onArray, function (index, val) {
             target.delay(val).queue(function () {
             $(this).addClass(index).dequeue();
-            if(index == "on01"){
-                 bg_width = $bg_wrap.innerWidth().toString();
-                 bg_height = $bg_wrap.innerHeight().toString();
-                 string_pxz = bg_width + "px " + bg_height  + "px";
-                $bg_wrap.children("li").css({"background-size":string_pxz});
-                $bg_wrap.find("hr.line").css({"background-size":string_pxz});
-            }
+            // if(index == "on01"){
+                 
+            // }
           });
         });
       }
